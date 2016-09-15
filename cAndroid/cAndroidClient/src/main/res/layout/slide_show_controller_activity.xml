@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linLayoutSSSlide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|center_vertical"
+        android:orientation="vertical" 
+        android:layout_weight="1">
+        
+        <TextView
+            android:id="@+id/tvSSActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slide_show_act_information"
+            android:textSize="25dip" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/linLayout15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnSSStart"
+                android:layout_width="wrap_content"
+                android:layout_height="61dip"
+                android:layout_weight="1"
+                android:text="@string/slide_show_act_btn_start" />
+
+            <Button
+                android:id="@+id/btnSSTouchPad"
+                android:layout_width="61dip"
+                android:layout_height="61dip"
+                android:background="@drawable/mouse" />
+
+            <Button
+                android:id="@+id/btnSSSettings"
+                android:layout_width="61dip"
+                android:layout_height="61dip"
+                android:background="@drawable/settings" />
+
+    </LinearLayout>
+ </LinearLayout>

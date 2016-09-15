@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_head_text">cAndroid</string>
+    <string name="about_info_text">&lt;b>\"cAndroid\"&lt;/b> proqramı kompüterin android əməliyyat sistemli qurğularla idare edilməsi üçün nəzərdə tutulub!&lt;br>
+        Proqram iki hissədən ibarətdir:&lt;br>
+        1) Server&lt;br>
+  		2) Klient&lt;br>
+  		&lt;br>
+  		Server hissəsi Windows, Linux, MacOS, Solaries əməliyyat sistemlərində işləyir.&lt;br>
+		Klient hissəsi Android 2.3 əməliyyat sistemini dəstəyləyən qurğularda işləyir.&lt;br>
+		Əlavə məlumat üçün proqramın  &lt;a href="foo?id=%s">wiki&lt;/a> səhifəsinə baxa bilərsiniz&lt;br>
+		&lt;br>
+		&lt;br>
+		Tərtibatçı: &lt;b>Hümmətli Səttar İsmayıl oğlu&lt;/b>
+		</string>
+    <string name="app_name">"cAndroid" idarə etmə pultu</string>
+    <string name="btn_about">Haqqında</string>
+    <string name="btn_exit">Çıxış</string>
+    <string name="btn_need_for_speed">Need For Speed idarə etmə</string>
+    <string name="btn_settings">Sazlama</string>
+    <string name="btn_slide_show">SlideShow idarə etmə</string>
+    <string name="btn_slide_wifi">Wi-Fi-ı aktivləşdirmək</string>
+    <string name="btn_touchpad_keyboard">Taçpad və Klaviyatura</string>
+    <string name="dialg_go_on">Davam et</string>
+    <string name="dialg_no">Xeyir</string>
+    <string name="dialg_yes">Bəli</string>
+    <string name="dialog_nfs_enabling_info">Need For Speed oyununu hazır vəziyyətə gətirdikdən sonra \"Başla\" 
+        düyməsini sıxın </string>
+    <string name="dialog_slide_show_enabling_info">Power Point proqramını hazır vəziyyətə gətirin və \"Başla\" düyməsini sıxın</string>
+    <string name="dialog_wi_fi_enabling_question">Wi-Fi şəbəkə aktiv deyil.\n Aktivləşdirilsin? </string>
+    <string name="need_for_speed_act__btn_stop">Əyləc</string>
+    <string name="need_for_speed_act_btn_aoutomatic">Avtomatik</string>
+    <string name="need_for_speed_act_btn_direct">D</string>
+    <string name="need_for_speed_act_btn_manual">Mexaniki</string>
+    <string name="need_for_speed_act_btn_pause">Gözlə</string>
+    <string name="need_for_speed_act_btn_return">R</string>
+    <string name="need_for_speed_act_btn_start">Başla</string>
+    <string name="settings_act_btn_close">Bağla</string>
+    <string name="settings_act_match_dialog_title">Diqqət!</string>
+    <string name="settings_act_match_ip_text">IP -ni düzgün daxil edin</string>
+    <string name="settings_act_match_port_text">Port-u düzgün daxil edin</string>
+    <string name="settings_act_saved_normally_text">Məlumatlar saxlanıldı</string>
+    <string name="settings_act_saved_not_normally_text">Məlumatların saxlanılması zaman\nsəhv baş verdi</string>
+    <string name="settings_act_tv_btn_save">Yadda saxla</string>
+    <string name="settings_act_tv_head">Serverin addresi</string>
+    <string name="settings_act_tv_ip">IP address</string>
+    <string name="settings_act_tv_port">Port</string>
+    <string name="slide_show_act_btn_end">Bitir</string>
+    <string name="slide_show_act_btn_start">Başla</string>
+    <string name="slide_show_act_information">&lt;CENTER>Səhifələri çevirmək üçün&lt;br> barmağınızı sağa sola sürüşdürün&lt;/CENTER></string>
+    <string name="touchpad_act_connected_dont_msg_text">Serverə qoşula bilmədi</string>
+    <string name="touchpad_act_connected_msg_text">Serverə qoşuldu</string>
+</resources>

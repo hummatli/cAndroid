@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/need_for_speed">
+
+           <LinearLayout
+               android:id="@+id/linearLayout1"
+               android:layout_width="match_parent"
+               android:layout_height="40dip"
+               android:gravity="right" >
+
+           <Button
+               android:id="@+id/btnNFSTouchPad"
+               android:layout_width="40dip"
+               android:layout_height="40dip"
+               android:background="@drawable/mouse" />
+
+           <Button
+               android:id="@+id/btnNFSSettings"
+               android:layout_width="40dip"
+               android:layout_height="40dip"
+               android:background="@drawable/settings"/>
+
+            </LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="horizontal" >
+
+	    <Button
+	        android:id="@+id/btnNFSMinus"
+	        android:layout_width="80dip"
+	        android:layout_height="match_parent"
+	        android:text="-" />
+
+	    <RelativeLayout
+	        android:id="@+id/relativeLayout1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1" >
+
+	        <Button
+	            android:id="@+id/btnNFSForceStop"
+	            android:layout_width="220dip"
+	            android:layout_height="120dip"
+	            android:layout_alignParentBottom="true"
+	            android:layout_alignParentRight="true"
+	            android:text="@string/need_for_speed_act__btn_stop" />
+
+	        <Button
+	            android:id="@+id/btnNFSDirection"
+	            android:layout_width="100dip"
+	            android:layout_height="80dip"
+	            android:layout_alignParentRight="true"
+	            android:layout_alignParentTop="true"
+	            android:text="Direction" />
+
+	        <Button
+	            android:id="@+id/btnNFSStartPause"
+	            android:layout_width="80dip"
+	            android:layout_height="80dip"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:text="StartPause" />
+
+	        <Button
+	            android:id="@+id/btnNFSManualAoutomat"
+	            android:layout_width="100dip"
+	            android:layout_height="80dip"
+	            android:layout_alignParentTop="true"
+	            android:layout_toLeftOf="@+id/btnNFSDirection"
+	            android:text="ManualAutomat" />
+
+	        <LinearLayout
+	            android:id="@+id/linearLayout2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:orientation="vertical" >
+
+	            <TextView
+	                android:id="@+id/textViewOrX"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="TextView" />
+
+	            <TextView
+	                android:id="@+id/textViewOrY"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="TextView" />
+
+	            <TextView
+	                android:id="@+id/textViewOrZ"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="TextView" />
+
+	            <TextView
+	                android:id="@+id/textViewAcX"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="TextView" />
+
+	            <TextView
+	                android:id="@+id/textViewAcY"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="TextView" />
+
+	            <TextView
+	                android:id="@+id/textViewAcZ"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="TextView" />
+	        </LinearLayout>
+	    </RelativeLayout>
+
+	    <Button
+	        android:id="@+id/btnNFSPlus"
+	        android:layout_width="80dip"
+	        android:layout_height="match_parent"
+	        android:text="+" />
+	</LinearLayout>
+    
+</LinearLayout>
+

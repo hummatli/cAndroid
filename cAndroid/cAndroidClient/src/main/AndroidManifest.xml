@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="candroid.client"
+      
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:name="com.mobapphome.candroid.client.CAndroidApplication"
+        android:label="@string/app_name" 
+        android:icon="@drawable/lanch_icon">
+        <activity android:name="com.mobapphome.candroid.client.controls.SplashActivity"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+                  android:screenOrientation="portrait">
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mobapphome.candroid.client.controls.MainActivity"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.Black.NoTitleBar"
+                  android:screenOrientation="portrait">           
+         </activity>
+        <activity android:name="com.mobapphome.candroid.client.controls.TouchPadActivity"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">           
+         </activity>
+        <activity android:name="com.mobapphome.candroid.client.controls.NeedForSpeedControllerActivity"
+                  android:label="@string/btn_settings"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+                  android:screenOrientation="landscape">           
+         </activity>
+        <activity android:name="com.mobapphome.candroid.client.controls.SlideShowControllerActivity"
+                  android:label="@string/btn_slide_show"
+                  android:theme="@android:style/Theme.Black">           
+         </activity>
+        <activity android:name="com.mobapphome.candroid.client.controls.SettingsActivity"
+                  android:label="@string/btn_settings"
+                  android:theme="@android:style/Theme.Black"
+                  android:screenOrientation="portrait">           
+         </activity>
+                 <activity android:name="com.mobapphome.candroid.client.controls.AboutActivity"
+                  android:label="@string/btn_about"
+                  android:theme="@android:style/Theme.Black"
+                  android:screenOrientation="portrait">           
+         </activity>
+         <receiver android:name="com.mobapphome.candroid.client.ConnectivityActionReceiver"
+        		android:enabled="true" android:label="ConnectivityActionReceiver">
+        		<intent-filter>
+            		<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            		<action android:name="android.net.wifi.STATE_CHANGE"/>
+            		<action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            			</intent-filter>
+    	</receiver>
+                 
+        
+        </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+</manifest> 

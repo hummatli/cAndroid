@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_space.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/src/main/res/drawable-mdpi/sym_keyboard_space.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_delete.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/src/main/res/drawable-mdpi/sym_keyboard_delete.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_done.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/src/main/res/drawable-mdpi/sym_keyboard_done.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_space.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/src/main/res/drawable-mdpi/sym_keyboard_space.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_shift.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/src/main/res/drawable-mdpi/sym_keyboard_shift.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_done.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/src/main/res/drawable-mdpi/sym_keyboard_done.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_return.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/app/src/main/res/drawable-mdpi/sym_keyboard_return.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_return.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/src/main/res/drawable-mdpi/sym_keyboard_return.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_shift.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/src/main/res/drawable-mdpi/sym_keyboard_shift.png"
+    },
+    {
+        "merged": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/build/intermediates/res/merged/debug/drawable-mdpi-v4/sym_keyboard_delete.png",
+        "source": "/Volumes/Disk_2/projects/github/cAndroid/cAndroid/cAndroidClient/src/main/res/drawable-mdpi/sym_keyboard_delete.png"
+    }
+]
