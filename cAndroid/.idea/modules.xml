@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/cAndroidClient/app.iml" filepath="$PROJECT_DIR$/cAndroidClient/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cAndroid.iml" filepath="$PROJECT_DIR$/cAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/cAndroidClient/cAndroidClient.iml" filepath="$PROJECT_DIR$/cAndroidClient/cAndroidClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cAndroidServer/cAndroidServer.iml" filepath="$PROJECT_DIR$/cAndroidServer/cAndroidServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cAndroidServer/candroidserver.iml" filepath="$PROJECT_DIR$/cAndroidServer/candroidserver.iml" />
     </modules>
   </component>
 </project>
