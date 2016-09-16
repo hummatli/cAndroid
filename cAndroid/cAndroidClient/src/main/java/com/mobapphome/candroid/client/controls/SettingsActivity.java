@@ -3,14 +3,13 @@ package com.mobapphome.candroid.client.controls;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
-import candroid.client.R;
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,7 +18,7 @@ import android.widget.Toast;
 
 
 
-public class SettingsActivity extends Activity implements  OnClickListener {
+public class SettingsActivity extends AppCompatActivity implements  OnClickListener {
 
 	final String TAG = SettingsActivity.class.getName();
 	private static final String IPADDRESS_PATTERN = 
@@ -95,9 +94,7 @@ public class SettingsActivity extends Activity implements  OnClickListener {
 		    	if(result){
 		    		builder.setMessage(res.getString(R.string.settings_act_saved_normally_text));
 			    	cAndroidApplication.getClient().close();
-			        if(!cAndroidApplication.getClient().connect()){
-			        	Toast.makeText(this,res.getString(R.string.touchpad_act_connected_dont_msg_text) ,5).show();
-			        }
+					cAndroidApplication.getClient().connectWithAsyncTask();
 		    	}else{
 		    		builder.setMessage(res.getString(R.string.settings_act_saved_not_normally_text));		    		
 		    	}

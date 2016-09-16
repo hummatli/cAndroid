@@ -2,8 +2,8 @@ package com.mobapphome.candroid.client.controls;
 
 import java.util.Date;
 
+import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
-import candroid.client.R;
 import com.mobapphome.candroid.client.command.Commands;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -14,6 +14,7 @@ import android.content.res.Resources;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -30,7 +31,7 @@ enum SlideDirection{
 	Right, Left
 }
 
-public class SlideShowControllerActivity extends Activity implements OnClickListener, OnTouchListener {
+public class SlideShowControllerActivity extends AppCompatActivity implements OnClickListener, OnTouchListener {
 	static final String TAG = SlideShowControllerActivity.class.getName();
 	int PRIMARY_CODE_F5 = -0X74;
 	int PRIMARY_CODE_ESC = -0X1B;
@@ -91,10 +92,8 @@ public class SlideShowControllerActivity extends Activity implements OnClickList
 			       });
 			AlertDialog alert = builder.create();
 			alert.show();
-		}else{        
-			if(!cAndroidApplication.getClient().connect()){
-				Toast.makeText(this,res.getString(R.string.touchpad_act_connected_dont_msg_text) ,5).show();
-			}
+		}else{
+			cAndroidApplication.getClient().connectWithAsyncTask();
 		}
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(res.getString(R.string.dialog_slide_show_enabling_info));
@@ -156,7 +155,7 @@ public class SlideShowControllerActivity extends Activity implements OnClickList
 	    image.setImageResource(drowble);
 	    toastLayout.addView(image);
 	    arrowImageToast.setView(toastLayout);
-	    arrowImageToast.setDuration(1);
+	    arrowImageToast.setDuration(Toast.LENGTH_SHORT);
 	    arrowImageToast.show();
 	    toastStartTime = new Date().getTime();
 	}

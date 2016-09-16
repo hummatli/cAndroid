@@ -1,6 +1,6 @@
 package com.mobapphome.candroid.client.controls;
-
-import candroid.client.*;
+import com.mobapphome.candroid.R;
+import com.mobapphome.candroid.client.CAndroidApplication;
 import com.mobapphome.candroid.client.command.Commands;
 
 import android.content.Context;
@@ -36,7 +36,7 @@ public PCKeyboardView(Context arg0, AttributeSet arg1, int arg2) {
 }
 
 public void init(Context arg0){
-    keyboardQwertySmall = new Keyboard(arg0, R.xml.qwerty_small); 
+    keyboardQwertySmall = new Keyboard(arg0, R.xml.qwerty_small);
     keyboardQwertyCapital = new Keyboard(arg0, R.xml.qwerty_capital); 
     keyboard123First = new Keyboard(arg0, R.xml.keyboard_123_first); 
     keyboard123Second = new Keyboard(arg0, R.xml.keyboard_123_second); 
@@ -119,7 +119,7 @@ public void onKey(int primaryCode, int[] keyCodes) {
 		break;
 		
 	default:
-		touchPadActivity.cAndroidApplication.getClient().sendCommandKey(Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, primaryCode);
+		((CAndroidApplication) touchPadActivity.getApplicationContext()).getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, primaryCode);
 		break;
 	}
 	

@@ -1,35 +1,54 @@
 package com.mobapphome.candroid.client.controls;
 
+import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
-import candroid.client.R;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class MainActivity extends Activity implements OnClickListener{
+public class MainActivity extends AppCompatActivity implements OnClickListener{
 	
 	private static final String TAG = MainActivity.class.getName();
-	CAndroidApplication cAndroidApplication;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		cAndroidApplication = (CAndroidApplication)getApplicationContext();
 		setContentView(R.layout.main_activity);
 		findViewById(R.id.btnMATouchPad).setOnClickListener(this);
 		findViewById(R.id.btnMANeedForSpeed).setOnClickListener(this);
 		findViewById(R.id.btnMASlideShow).setOnClickListener(this);
-		findViewById(R.id.btnMAWiFiEnable).setOnClickListener(this);
-		findViewById(R.id.btnMASettings).setOnClickListener(this);
-		findViewById(R.id.btnMAAbout).setOnClickListener(this);
-		findViewById(R.id.btnMAExit).setOnClickListener(this);
 	}
-	
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+			return true;
+		} else if (id == R.id.action_about) {
+			startActivity(new Intent(MainActivity.this, AboutActivity.class));
+			return true;
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btnMATouchPad:
@@ -44,22 +63,6 @@ public class MainActivity extends Activity implements OnClickListener{
 			startActivity(new Intent(MainActivity.this, SlideShowControllerActivity.class));							
 			break;
 
-		case R.id.btnMAWiFiEnable:
-			startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));		
-			break;
-			
-		case R.id.btnMASettings:
-			startActivity(new Intent(MainActivity.this, SettingsActivity.class));							
-			break;
-
-		case R.id.btnMAAbout:
-			startActivity(new Intent(MainActivity.this, AboutActivity.class));							
-			break;
-
-		case R.id.btnMAExit:			
-			finish();
-			break;
-
 		default:
 			Log.e(TAG, "This boutton dont have  onClick Listener. id = " + v.getId());
 			break;
@@ -68,6 +71,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	
 	@Override
 	protected void onDestroy() {
+		CAndroidApplication cAndroidApplication = (CAndroidApplication)getApplicationContext();
 		if(cAndroidApplication.getClient() != null){
 			cAndroidApplication.getClient().close();
 		}

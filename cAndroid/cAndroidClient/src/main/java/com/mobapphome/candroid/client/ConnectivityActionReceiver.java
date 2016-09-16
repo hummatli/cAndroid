@@ -10,10 +10,9 @@ import android.net.wifi.WifiManager;
 import android.util.Log;
 import android.widget.Toast;
 
-import candroid.client.R;
+import com.mobapphome.candroid.R;
 
 public class ConnectivityActionReceiver extends BroadcastReceiver {
-	final static String TAG = ConnectivityActionReceiver.class.getName();
 
 	@Override
 	public void onReceive(final Context context, final Intent intent) {
@@ -24,18 +23,16 @@ public class ConnectivityActionReceiver extends BroadcastReceiver {
 		    NetworkInfo networkInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
 		    if(networkInfo.isConnected()) {
 		        // Wifi is connected
-		        Log.d(TAG, "Wifi is connected: " + String.valueOf(networkInfo));
+		        Log.d("test", "Wifi is connected: " + String.valueOf(networkInfo));
 				if(cAndroidApplication.getClient() != null){
-					if(!cAndroidApplication.getClient().connect()){
-						Toast.makeText(context,res.getString(R.string.touchpad_act_connected_dont_msg_text) ,5).show();
-					}
+					cAndroidApplication.getClient().connectWithAsyncTask();
 		        }
 		    }
 		} else if(intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
 		    NetworkInfo networkInfo = intent.getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
 		    if(networkInfo.getType() == ConnectivityManager.TYPE_WIFI && !networkInfo.isConnected()) {
 		        // Wifi is disconnected
-		        Log.d(TAG, "Wifi is disconnected: " + String.valueOf(networkInfo));
+		        Log.d("test", "Wifi is disconnected: " + String.valueOf(networkInfo));
 				if(cAndroidApplication.getClient() != null){
 					cAndroidApplication.getClient().close();
 				}

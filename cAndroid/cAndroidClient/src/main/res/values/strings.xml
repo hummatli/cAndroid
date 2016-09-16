@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">"cAndroid" idarə etmə pultu</string>
+    <string name="app_name">cAndroid</string>
     
     <string name="btn_touchpad_keyboard">Taçpad və Klaviyatura</string>
     <string name="btn_need_for_speed">Need For Speed idarə etmə</string>

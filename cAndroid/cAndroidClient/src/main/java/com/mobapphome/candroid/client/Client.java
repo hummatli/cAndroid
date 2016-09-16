@@ -17,6 +17,7 @@ import java.net.UnknownHostException;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -24,7 +25,7 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
-import candroid.client.R;
+import com.mobapphome.candroid.R;
 
 /**
  *
@@ -91,9 +92,9 @@ public class Client{
 		return port;
 	}
 	
-    synchronized public boolean connect(){
+    synchronized private boolean connect(){
 	    Resources res = context.getResources();
-	    
+
     	if(socket == null || !socket.isConnected()){
     	    if(readConfig()){
 	    		Log.d(TAG, "connect in");
@@ -102,15 +103,15 @@ public class Client{
 		            socket.setSoTimeout(2000);
 		            outPrintWriter = new PrintWriter(socket.getOutputStream(), true);
 		            inReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-		            Toast.makeText(context,res.getString(R.string.touchpad_act_connected_msg_text) ,5).show();
+		            Toast.makeText(context,res.getString(R.string.touchpad_act_connected_msg_text) ,Toast.LENGTH_SHORT).show();
 		            return true;
 		        } catch (UnknownHostException ex) {
 	            	//Toast.makeText(context,res.getString(R.string.touchpad_act_connected_dont_msg_text) ,5).show();
-					Log.e(TAG, "Error: connect, UnknownHostException, exeption = " + ex.getMessage());												
+					Log.e(TAG, "Error: connect, UnknownHostException, exeption = " + ex.getMessage());
 		        } catch (IOException ex) {
 		        	//Toast.makeText(context,res.getString(R.string.touchpad_act_connected_dont_msg_text) ,5).show();
-					Log.e(TAG, "Error: connect, IOException, exeption = " + ex.getMessage());												
-		        }	
+					Log.e(TAG, "Error: connect, IOException, exeption = " + ex.getMessage());
+		        }
 	    		Log.d(TAG, "connect out");
 		        return false;
 			}else{
@@ -121,7 +122,27 @@ public class Client{
         	return true;
         }
     }
-        
+
+
+	synchronized public void connectWithAsyncTask(){
+
+		new AsyncTask<Void, Void, Boolean>() {
+
+			@Override
+			protected void onPostExecute(Boolean aBoolean) {
+				super.onPostExecute(aBoolean);
+				if(!aBoolean){
+					Toast.makeText(context,context.getResources().getString(R.string.touchpad_act_connected_dont_msg_text) ,Toast.LENGTH_SHORT).show();
+				}
+			}
+
+			@Override
+			protected Boolean doInBackground(Void... voids) {
+				return connect();
+			}
+		}.execute();
+	}
+
 	public boolean readConfig(){
 		BufferedReader buffReader = null;
 		try{
@@ -209,7 +230,7 @@ public class Client{
         return strFromServer;
     }
 
-   public String sendCommandKey(int commandType, int key){
+   protected String sendCommandKey(int commandType, int key){
        String commandStr = commandType + "," + key;
        Log.d(TAG, commandStr);
        return sendRequest(commandStr);  	
