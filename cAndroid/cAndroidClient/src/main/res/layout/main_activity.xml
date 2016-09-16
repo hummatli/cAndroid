@@ -2,31 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center|top"
     android:orientation="vertical" >
-
-
-    <Button
-        android:id="@+id/btnMATouchPad"
-        android:layout_width="190dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_touchpad_keyboard" />
+        android:text="@string/about_info_text"
+        android:textSize="17sp" />
 
-
-    <Button
-        android:id="@+id/btnMANeedForSpeed"
-        android:layout_width="190dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_need_for_speed" />
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnMATouchPad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_touchpad_keyboard"/>
 
 
-    <Button
-        android:id="@+id/btnMASlideShow"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_slide_show" />
+        <Button
+            android:id="@+id/btnMANeedForSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_need_for_speed" />
 
 
-
+        <Button
+            android:id="@+id/btnMASlideShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_slide_show" />
+    </LinearLayout>
 
 </LinearLayout>

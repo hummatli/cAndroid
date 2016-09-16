@@ -2,6 +2,8 @@ package com.mobapphome.candroid.client.controls;
 
 import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
+import com.mobapphome.candroid.client.LocaleUpdater;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		LocaleUpdater.updateLocale(this,"az");
 		setContentView(R.layout.main_activity);
 		findViewById(R.id.btnMATouchPad).setOnClickListener(this);
 		findViewById(R.id.btnMANeedForSpeed).setOnClickListener(this);

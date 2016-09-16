@@ -18,8 +18,9 @@
  */  
 -->  
   
-<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"  
-    android:keyWidth="10%p"  
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="10%"
+    android:keyHeight="10%"
     android:horizontalGap="0px"  
     android:verticalGap="0px">  
   
