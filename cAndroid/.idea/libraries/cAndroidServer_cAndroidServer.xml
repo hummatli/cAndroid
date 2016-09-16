@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="cAndroidServer.cAndroidServer">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/cAndroidServer/build/libs/cAndroidServer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
