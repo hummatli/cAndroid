@@ -1,1 +1,1 @@
-include ':cAndroidClient', ':cAndroidServer'
+include ':cAndroidClient', ':cAndroidServer', ':libCommands'

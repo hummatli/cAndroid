@@ -10,8 +10,7 @@
  */
 package com.mobapphome.candroid.server.client;
 
-
-import com.mobapphome.candroid.server.command.Commands;
+import com.mobapphome.candroid.commands.Commands;
 
 /**
  *

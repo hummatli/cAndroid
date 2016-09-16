@@ -1,7 +1,7 @@
 package com.mobapphome.candroid.client.controls;
 import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
-import com.mobapphome.candroid.client.command.Commands;
+import com.mobapphome.candroid.commands.Commands;
 
 import android.content.Context;
 import android.inputmethodservice.Keyboard;
@@ -119,7 +119,7 @@ public void onKey(int primaryCode, int[] keyCodes) {
 		break;
 		
 	default:
-		((CAndroidApplication) touchPadActivity.getApplicationContext()).getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, primaryCode);
+		((CAndroidApplication) touchPadActivity.getApplicationContext()).getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, primaryCode);
 		break;
 	}
 	

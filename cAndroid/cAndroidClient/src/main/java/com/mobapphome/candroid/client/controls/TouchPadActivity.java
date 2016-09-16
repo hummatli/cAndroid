@@ -1,13 +1,10 @@
 package com.mobapphome.candroid.client.controls;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.wifi.WifiManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
@@ -16,11 +13,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
-import com.mobapphome.candroid.client.command.Commands;
+import com.mobapphome.candroid.commands.Commands;
 
 public class TouchPadActivity extends AppCompatActivity implements View.OnTouchListener, View.OnClickListener{
 
@@ -93,18 +89,13 @@ public class TouchPadActivity extends AppCompatActivity implements View.OnTouchL
     }
 
     public void setBtnLongPress(boolean press){
-    	String commandStr;
     	if(press){
     		btnLeftIsLongPressed = true;
-            commandStr = Commands.COMMAND_TYPE_MOUSE_PRESSED + "," + Commands.MOUSE_KEY_LEFT;
-            Log.d(TAG, commandStr);
-            cAndroidApplication.getClient().sendRequest(commandStr);    		
+            cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_MOUSE_PRESSED, Commands.MOUSE_KEY_LEFT);
     	}else{
        		btnLeftIsLongPressed = false;
     		btnLeft.setPressed(false);
-            commandStr = Commands.COMMAND_TYPE_MOUSE_RElEASED + "," + Commands.MOUSE_KEY_LEFT;
-            Log.d(TAG, commandStr);
-            cAndroidApplication.getClient().sendRequest(commandStr);                		
+            cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_MOUSE_RElEASED, Commands.MOUSE_KEY_LEFT);
     	}
     }
     
@@ -127,12 +118,8 @@ public class TouchPadActivity extends AppCompatActivity implements View.OnTouchL
                		if(btnLeftIsLongPressed){
             			setBtnLongPress(false);
                		}else{
-	                    String commandStr = Commands.COMMAND_TYPE_MOUSE_PRESSED + "," + Commands.MOUSE_KEY_LEFT;
-	                    Log.d(TAG, commandStr);
-	                    cAndroidApplication.getClient().sendRequest(commandStr);
-	                    commandStr = Commands.COMMAND_TYPE_MOUSE_RElEASED + "," + Commands.MOUSE_KEY_LEFT;
-	                    Log.d(TAG, commandStr);
-	                    cAndroidApplication.getClient().sendRequest(commandStr);
+	                    cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_MOUSE_PRESSED,Commands.MOUSE_KEY_LEFT);
+	                    cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_MOUSE_RElEASED , Commands.MOUSE_KEY_LEFT);
                     }
                 }
             } else if (me.getAction() == MotionEvent.ACTION_MOVE) {
@@ -141,7 +128,7 @@ public class TouchPadActivity extends AppCompatActivity implements View.OnTouchL
                 if (diffX != 0 || diffY != 0) {
                     String commandStr = Commands.COMMAND_TYPE_MOUSE_MOVE + "," + diffX + "," + diffY;
                     Log.d(TAG, commandStr);
-                    cAndroidApplication.getClient().sendRequest(commandStr);
+                    cAndroidApplication.getClient().sendRequestAsync(commandStr);
                 }
 
                 TouchPadActivity.xInit = x;
@@ -158,7 +145,7 @@ public class TouchPadActivity extends AppCompatActivity implements View.OnTouchL
                 if (diffYScroll != 0) {
                     String commandStr = Commands.COMMAND_TYPE_MOUSE_WHEEL + "," + diffYScroll;
                     Log.d(TAG, commandStr);
-                    cAndroidApplication.getClient().sendRequest(commandStr);
+                    cAndroidApplication.getClient().sendRequestAsync(commandStr);
                 }
                 TouchPadActivity.yInitScroll = yScroll;
                 return true;
@@ -182,10 +169,10 @@ public class TouchPadActivity extends AppCompatActivity implements View.OnTouchL
                 			btnLeft.setPressed(false);
 	                        commandStr = Commands.COMMAND_TYPE_MOUSE_PRESSED + "," + Commands.MOUSE_KEY_LEFT;
 	                        Log.d(TAG, commandStr);
-	                        cAndroidApplication.getClient().sendRequest(commandStr);
+	                        cAndroidApplication.getClient().sendRequestAsync(commandStr);
 	                        commandStr = Commands.COMMAND_TYPE_MOUSE_RElEASED + "," + Commands.MOUSE_KEY_LEFT;
 	                        Log.d(TAG, commandStr);
-	                        cAndroidApplication.getClient().sendRequest(commandStr);
+	                        cAndroidApplication.getClient().sendRequestAsync(commandStr);
                  		}
                 	}
                 }
@@ -197,11 +184,11 @@ public class TouchPadActivity extends AppCompatActivity implements View.OnTouchL
                 } else if (me.getAction() == MotionEvent.ACTION_UP) {
                     commandStr = Commands.COMMAND_TYPE_MOUSE_PRESSED + "," + Commands.MOUSE_KEY_RIGHT;
                     Log.d(TAG, commandStr);
-                    cAndroidApplication.getClient().sendRequest(commandStr);
+                    cAndroidApplication.getClient().sendRequestAsync(commandStr);
             		btnRight.setPressed(false);
                     commandStr = Commands.COMMAND_TYPE_MOUSE_RElEASED + "," + Commands.MOUSE_KEY_RIGHT;
                     Log.d(TAG, commandStr);
-                    cAndroidApplication.getClient().sendRequest(commandStr);
+                    cAndroidApplication.getClient().sendRequestAsync(commandStr);
                 }
                 break;
             default:

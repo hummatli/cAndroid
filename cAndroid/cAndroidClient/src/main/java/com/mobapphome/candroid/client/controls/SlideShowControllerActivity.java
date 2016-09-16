@@ -4,8 +4,8 @@ import java.util.Date;
 
 import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
-import com.mobapphome.candroid.client.command.Commands;
-import android.app.Activity;
+import com.mobapphome.candroid.commands.Commands;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -114,13 +114,13 @@ public class SlideShowControllerActivity extends AppCompatActivity implements On
 				started = true;
 				btnSSStart.setText(res.getString(R.string.slide_show_act_btn_end));
 				Log.d(TAG, "This boutton dont have  onClick Listener. Minus");
-				cAndroidApplication.getClient().sendCommandKeyWithHandler(
+				cAndroidApplication.getClient().sendCommandKeyAsync(
 						Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_F5);
 			}else{
 				started = false;
 				btnSSStart.setText(res.getString(R.string.slide_show_act_btn_start));
 				Log.d(TAG, "This boutton dont have  onClick Listener. Plus");
-				cAndroidApplication.getClient().sendCommandKeyWithHandler(
+				cAndroidApplication.getClient().sendCommandKeyAsync(
 						Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_ESC);
 			}
 			break;
@@ -167,11 +167,11 @@ public class SlideShowControllerActivity extends AppCompatActivity implements On
         Log.d(TAG, "Diff X = " + slideDirection);	
         if(slideDirection == SlideDirection.Right){
         	showToastImage(R.drawable.forward_arrow);
-    		cAndroidApplication.getClient().sendCommandKeyWithHandler(
+    		cAndroidApplication.getClient().sendCommandKeyAsync(
     				Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_RIGHT);        	
         }else if(slideDirection == SlideDirection.Left){
         	showToastImage(R.drawable.back_arrow);
-    		cAndroidApplication.getClient().sendCommandKeyWithHandler(
+    		cAndroidApplication.getClient().sendCommandKeyAsync(
     				Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_LEFT);        	        	
         }else{
 			Log.e(TAG, "This SlideDirection is not defined = " + slideDirection);        	
@@ -208,7 +208,7 @@ public class SlideShowControllerActivity extends AppCompatActivity implements On
 	
 	@Override
 	protected void onStop() {
-		cAndroidApplication.getClient().sendCommandKeyWithHandler(
+		cAndroidApplication.getClient().sendCommandKeyAsync(
 				Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_ESC);
 		super.onStop();
 	}

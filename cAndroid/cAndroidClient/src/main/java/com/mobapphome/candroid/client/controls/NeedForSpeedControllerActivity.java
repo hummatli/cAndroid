@@ -2,7 +2,8 @@ package com.mobapphome.candroid.client.controls;
 
 import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
-import com.mobapphome.candroid.client.command.Commands;
+import com.mobapphome.candroid.commands.Commands;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -23,7 +24,6 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 enum TurnState{
@@ -166,13 +166,13 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 		switch (v.getId()) {
 		case R.id.btnNFSMinus:
 			Log.d(TAG, "This boutton dont have  onClick Listener. Minus");
-			cAndroidApplication.getClient().sendCommandKeyWithHandler(
+			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_CTRL);
 			break;
 
 		case R.id.btnNFSPlus:
 			Log.d(TAG, "This boutton dont have  onClick Listener. Plus");
-			cAndroidApplication.getClient().sendCommandKeyWithHandler(
+			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_SHIFT);
 			break;
 
@@ -251,11 +251,11 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 			if(event.getAction() == MotionEvent.ACTION_DOWN){
 				btnForceStop.setPressed(true);
 				Log.d(TAG, "This boutton dont have  onClick Listener. Stop Down");
-				cAndroidApplication.getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_PRESSED, PRIMARY_CODE_SPACE);
+				cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_KEY_PRESSED, PRIMARY_CODE_SPACE);
 			}else if(event.getAction() == MotionEvent.ACTION_UP){
 				btnForceStop.setPressed(false);
 				Log.d(TAG, "This boutton dont have  onClick Listener. Stop Up");
-				cAndroidApplication.getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_SPACE);
+				cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_SPACE);
 			}
 			break;
 		default:
@@ -280,11 +280,11 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 		Log.d(TAG, "Stopped");
 		sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER));
 		sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION));
-		cAndroidApplication.getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_SPACE);
-		cAndroidApplication.getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_UP);
-		cAndroidApplication.getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_DOWN);
-		cAndroidApplication.getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_RIGHT);
-		cAndroidApplication.getClient().sendCommandKeyWithHandler(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_LEFT);
+		cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_SPACE);
+		cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_UP);
+		cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_DOWN);
+		cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_RIGHT);
+		cAndroidApplication.getClient().sendCommandKeyAsync(Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_LEFT);
 
 	}
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
@@ -296,19 +296,19 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 			return;
 		}
 		if(turnState == TurnState.Right){
-			cAndroidApplication.getClient().sendCommandKeyWithHandler(
+			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_LEFT);
-			cAndroidApplication.getClient().sendCommandKeyWithHandler(
+			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_PRESSED, PRIMARY_CODE_RIGHT);
 		}else if(turnState == TurnState.Left){
-			cAndroidApplication.getClient().sendCommandKeyWithHandler(
+			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_RIGHT);
-			cAndroidApplication.getClient().sendCommandKeyWithHandler(
+			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_PRESSED, PRIMARY_CODE_LEFT);
 		}else if(turnState == TurnState.Forward){
-			cAndroidApplication.getClient().sendCommandKeyWithHandler(
+			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_LEFT);
-			cAndroidApplication.getClient().sendCommandKeyWithHandler(
+			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_RIGHT);
 		}else{
 			Log.e(TAG, "This TurnSate is not defined = " + turnState);
@@ -332,14 +332,14 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 		}
 
 		if(gasPedalSate == GasPedalSate.Pressed){
-    		cAndroidApplication.getClient().sendCommandKeyWithHandler(
+    		cAndroidApplication.getClient().sendCommandKeyAsync(
     					Commands.COMMAND_TYPE_KEY_RElEASED, releasedKey);
-    		cAndroidApplication.getClient().sendCommandKeyWithHandler(
+    		cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_PRESSED, pressedKey);
 		}else if(gasPedalSate == GasPedalSate.Released){
-    		cAndroidApplication.getClient().sendCommandKeyWithHandler(
+    		cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_DOWN);
-    		cAndroidApplication.getClient().sendCommandKeyWithHandler(
+    		cAndroidApplication.getClient().sendCommandKeyAsync(
 				Commands.COMMAND_TYPE_KEY_RElEASED, PRIMARY_CODE_UP);
 		}else{
 			Log.e(TAG, "This GasPedalSate is not defined = " + gasPedalSate);

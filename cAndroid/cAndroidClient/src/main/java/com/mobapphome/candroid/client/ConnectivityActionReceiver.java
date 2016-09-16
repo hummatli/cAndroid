@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.mobapphome.candroid.R;
 
 public class ConnectivityActionReceiver extends BroadcastReceiver {
+	final static String TAG = ConnectivityActionReceiver.class.getName();
 
 	@Override
 	public void onReceive(final Context context, final Intent intent) {
@@ -23,7 +24,7 @@ public class ConnectivityActionReceiver extends BroadcastReceiver {
 		    NetworkInfo networkInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
 		    if(networkInfo.isConnected()) {
 		        // Wifi is connected
-		        Log.d("test", "Wifi is connected: " + String.valueOf(networkInfo));
+		        Log.d(TAG, "Wifi is connected: " + String.valueOf(networkInfo));
 				if(cAndroidApplication.getClient() != null){
 					cAndroidApplication.getClient().connectWithAsyncTask();
 		        }
@@ -32,7 +33,7 @@ public class ConnectivityActionReceiver extends BroadcastReceiver {
 		    NetworkInfo networkInfo = intent.getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
 		    if(networkInfo.getType() == ConnectivityManager.TYPE_WIFI && !networkInfo.isConnected()) {
 		        // Wifi is disconnected
-		        Log.d("test", "Wifi is disconnected: " + String.valueOf(networkInfo));
+		        Log.d(TAG, "Wifi is disconnected: " + String.valueOf(networkInfo));
 				if(cAndroidApplication.getClient() != null){
 					cAndroidApplication.getClient().close();
 				}

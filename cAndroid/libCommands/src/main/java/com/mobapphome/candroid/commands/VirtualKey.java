@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mobapphome.candroid.server.command;
+package com.mobapphome.candroid.commands;
 
 /**
  *

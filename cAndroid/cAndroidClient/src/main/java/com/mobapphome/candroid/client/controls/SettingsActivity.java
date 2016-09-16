@@ -7,8 +7,10 @@ import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -27,7 +29,10 @@ public class SettingsActivity extends AppCompatActivity implements  OnClickListe
 			"([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
 			"([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
 	private static final String PORT_PATTERN = "([0-9]{1,5})";
-		
+
+
+
+
 	Pattern patternIP = Pattern.compile(IPADDRESS_PATTERN);
 	Pattern patternPort = Pattern.compile(PORT_PATTERN);
 		
@@ -39,22 +44,14 @@ public class SettingsActivity extends AppCompatActivity implements  OnClickListe
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		cAndroidApplication = (CAndroidApplication)getApplicationContext();
-		cAndroidApplication.getClient().readConfig();
 		setContentView(R.layout.settings_activity);
 		
 		findViewById(R.id.btnSASave).setOnClickListener(this);
 		findViewById(R.id.btnSAClose).setOnClickListener(this);
 		etSAIP = (EditText) findViewById(R.id.etSAIP);
 		etSAPort = (EditText) findViewById(R.id.etSAPort);
-		String IP = cAndroidApplication.getClient().getIP();
-		if(IP != null && !IP.isEmpty()){
-			etSAIP.setText(IP);
-		}else{
-			etSAIP.setText("0.0.0.0");
-		}
-		
-		int port = cAndroidApplication.getClient().getPort();
-		etSAPort.setText(String.valueOf(port));
+		etSAIP.setText(cAndroidApplication.getIP());
+		etSAPort.setText(String.valueOf(cAndroidApplication.getPort()));
 	}
 
 	public void onClick(View v) {
@@ -90,7 +87,9 @@ public class SettingsActivity extends AppCompatActivity implements  OnClickListe
 		    	alert.show();
 		    }else{
 		    	Log.d(TAG, "");
-		    	boolean result = cAndroidApplication.getClient().writeConfig(etSAIP.getText().toString(),Integer.valueOf(etSAPort.getText().toString()));
+				cAndroidApplication.setIp(etSAIP.getText().toString());
+				cAndroidApplication.setPort(Integer.valueOf(etSAPort.getText().toString()));
+		    	boolean result = true;// Bura normal yazilmamaq shertin qoyarsan
 		    	if(result){
 		    		builder.setMessage(res.getString(R.string.settings_act_saved_normally_text));
 			    	cAndroidApplication.getClient().close();
@@ -113,5 +112,7 @@ public class SettingsActivity extends AppCompatActivity implements  OnClickListe
 			break;
 		}
 	}
+
+
 
 }
