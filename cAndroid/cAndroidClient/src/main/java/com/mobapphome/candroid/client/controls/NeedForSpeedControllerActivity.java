@@ -141,8 +141,8 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 	    int wifi = wifiManager.getWifiState();
 		if (wifi != WifiManager.WIFI_STATE_ENABLED && wifi != WifiManager.WIFI_STATE_ENABLING) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle(getResources().getString(R.string.settings_act_match_dialog_title));
 			builder.setMessage(res.getString(R.string.dialog_wi_fi_enabling_question));
-			builder.setCancelable(false);
 			builder.setPositiveButton(res.getString(R.string.dialg_yes), new DialogInterface.OnClickListener() {
 			           public void onClick(DialogInterface dialog, int id) {
 			        	   startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
@@ -162,8 +162,8 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(getResources().getString(R.string.settings_act_match_dialog_title));
 		builder.setMessage(res.getString(R.string.dialog_nfs_enabling_info));
-		builder.setCancelable(false);
 		builder.setPositiveButton(res.getString(R.string.dialg_go_on), new DialogInterface.OnClickListener() {
 		           public void onClick(DialogInterface dialog, int id) {
 		           }

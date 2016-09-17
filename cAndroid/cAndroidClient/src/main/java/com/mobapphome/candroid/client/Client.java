@@ -17,7 +17,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.mobapphome.candroid.R;
-import com.mobapphome.candroid.client.controls.SettingsActivity;
 
 /**
  * @author SETTAR
@@ -73,9 +72,9 @@ public class Client {
             protected void onPostExecute(Boolean aBoolean) {
                 super.onPostExecute(aBoolean);
                 if (!aBoolean) {
-                    Toast.makeText(context, context.getResources().getString(R.string.touchpad_act_connected_dont_msg_text), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, context.getResources().getString(R.string.txt_connected_dont_msg), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(context, context.getResources().getString(R.string.touchpad_act_connected_msg_text), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, context.getResources().getString(R.string.txt_connected_msg), Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -17,14 +17,14 @@
             android:id="@+id/btnNFSMinus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="-"
+            android:text="@string/need_for_speed_act_btn_minus"
             style="@style/MyNeedForSpeedButton"
             android:textSize="80sp"
             android:minWidth="60dp"/>
 
         <LinearLayout
             android:id="@+id/relativeLayout1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -44,7 +44,7 @@
                         android:id="@+id/btnNFSStartPause"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="StartPause"
+                        android:text="@string/need_for_speed_act_btn_start"
                         style="@style/MyNeedForSpeedButton"
                         android:drawableLeft="@drawable/ic_play_arrow_white_36dp"
                         android:paddingLeft="0dp"/>
@@ -54,7 +54,7 @@
                     android:id="@+id/btnNFSManualAoutomat"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="ManualAutomat"
+                    android:text="@string/need_for_speed_act_btn_manual"
                     style="@style/MyNeedForSpeedButton"/>
 
 
@@ -62,7 +62,7 @@
                     android:id="@+id/btnNFSDirection"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="R"
+                    android:text="@string/need_for_speed_act_btn_return"
                     style="@style/MyNeedForSpeedButton"
                     android:textSize="20sp"/>
             </LinearLayout>
@@ -149,7 +149,7 @@
             android:id="@+id/btnNFSPlus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="+"
+            android:text="@string/need_for_speed_act_btn_plus"
             style="@style/MyNeedForSpeedButton"
             android:textSize="60sp"
             android:minWidth="60dp"/>

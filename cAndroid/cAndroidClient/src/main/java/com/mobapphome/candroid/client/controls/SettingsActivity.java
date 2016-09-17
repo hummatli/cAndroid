@@ -7,18 +7,14 @@ import com.mobapphome.candroid.R;
 import com.mobapphome.candroid.client.CAndroidApplication;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import android.widget.Toast;
-
 
 
 public class SettingsActivity extends AppCompatActivity implements  OnClickListener {
@@ -48,7 +44,7 @@ public class SettingsActivity extends AppCompatActivity implements  OnClickListe
 		setContentView(R.layout.settings_activity);
 		
 		findViewById(R.id.btnSASave).setOnClickListener(this);
-		findViewById(R.id.btnSAClose).setOnClickListener(this);
+		findViewById(R.id.btnSACancel).setOnClickListener(this);
 		etSAIP = (EditText) findViewById(R.id.etSAIP);
 		etSAPort = (EditText) findViewById(R.id.etSAPort);
 		etSAIP.setText(cAndroidApplication.getIP());
@@ -109,7 +105,7 @@ public class SettingsActivity extends AppCompatActivity implements  OnClickListe
 		
 			break;
 			
-		case R.id.btnSAClose:
+		case R.id.btnSACancel:
 			finish();
 			break;
 

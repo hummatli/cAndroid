@@ -7,4 +7,5 @@
     <color name="touchpad_background_color">#0c0d0d</color>
     <color name="btn_need_for_speed_color_simple">#393a3a</color>
     <color name="btn_need_for_speed_color_pressed">#616363</color>
+    <color name="sample_text_color">#969698</color>
 </resources>

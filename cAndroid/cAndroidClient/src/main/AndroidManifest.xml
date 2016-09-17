@@ -25,18 +25,18 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name="com.mobapphome.candroid.client.controls.NeedForSpeedControllerActivity"
-            android:label="@string/need_for_speed_title"
+            android:label="@string/txt_need_for_speed"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.ActionBar.Transparent"/>
         <activity
             android:name=".client.controls.SlideShowControllerActivity"
-            android:label="@string/btn_slide_show"/>
+            android:label="@string/txt_slide_show"/>
         <activity
             android:name=".client.controls.SettingsActivity"
-            android:label="@string/btn_settings"/>
+            android:label="@string/txt_settings"/>
         <activity
             android:name=".client.controls.AboutActivity"
-            android:label="@string/btn_about"/>
+            android:label="@string/txt_about_title"/>
 
         <receiver
             android:name=".client.ConnectivityActionReceiver"

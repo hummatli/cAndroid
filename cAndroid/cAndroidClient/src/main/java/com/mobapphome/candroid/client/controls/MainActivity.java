@@ -8,11 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener{
 	
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 		findViewById(R.id.btnMATouchPad).setOnClickListener(this);
 		findViewById(R.id.btnMANeedForSpeed).setOnClickListener(this);
 		findViewById(R.id.btnMASlideShow).setOnClickListener(this);
+		((TextView)findViewById(R.id.tvMainAboutInfo)).setMovementMethod(LinkMovementMethod.getInstance());
 	}
 
 	@Override
