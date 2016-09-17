@@ -2,49 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingBottom="10dp">
 
     <LinearLayout
         android:id="@+id/linLayoutSSSlide"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center|center_vertical"
-        android:orientation="vertical" 
-        android:layout_weight="1">
-        
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="0dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
         <TextView
             android:id="@+id/tvSSActivity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text="@string/slide_show_act_information"
-            android:textSize="25dip" />
+            android:textSize="25sp" />
 
     </LinearLayout>
 
-    <LinearLayout
-            android:id="@+id/linLayout15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/btnSSStart"
-                android:layout_width="wrap_content"
-                android:layout_height="61dip"
-                android:layout_weight="1"
-                android:text="@string/slide_show_act_btn_start" />
-
-            <Button
-                android:id="@+id/btnSSTouchPad"
-                android:layout_width="61dip"
-                android:layout_height="61dip"
-                android:background="@drawable/mouse" />
-
-            <Button
-                android:id="@+id/btnSSSettings"
-                android:layout_width="61dip"
-                android:layout_height="61dip"
-                android:background="@drawable/settings" />
-
-    </LinearLayout>
- </LinearLayout>
+    <Button
+        android:id="@+id/btnSSStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:text="@string/slide_show_act_btn_start" />
+</LinearLayout>

@@ -17,6 +17,8 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -66,9 +68,6 @@ public class SlideShowControllerActivity extends AppCompatActivity implements On
 		
 		TextView tv = (TextView)findViewById(R.id.tvSSActivity);
 		tv.setText(Html.fromHtml(res.getString(R.string.slide_show_act_information)));
-		
-		findViewById(R.id.btnSSTouchPad).setOnClickListener(this);
-		findViewById(R.id.btnSSSettings).setOnClickListener(this);
 		findViewById(R.id.linLayoutSSSlide).setOnTouchListener(this);
 		
 		
@@ -103,10 +102,44 @@ public class SlideShowControllerActivity extends AppCompatActivity implements On
 		           }
 		       });
 		AlertDialog alert = builder.create();
-		alert.show();	
+		alert.show();
+
+		try {
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		}catch (NullPointerException npe){
+			Log.i("test", npe.getMessage());
+		}
 
 	}
-	
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.slide_show_controller, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			startActivity(new Intent(SlideShowControllerActivity.this, SettingsActivity.class));
+			return true;
+		} else if (id == R.id.action_control) {
+			startActivity(new Intent(SlideShowControllerActivity.this, TouchPadActivity.class));
+			return true;
+		} else if (id == android.R.id.home) {
+			onBackPressed();
+			return true;
+		}
+
+
+		return super.onOptionsItemSelected(item);
+	}
+
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btnSSStart:
@@ -123,14 +156,6 @@ public class SlideShowControllerActivity extends AppCompatActivity implements On
 				cAndroidApplication.getClient().sendCommandKeyAsync(
 						Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_ESC);
 			}
-			break;
-
-		case R.id.btnSSSettings:
-			startActivity(new Intent(SlideShowControllerActivity.this, SettingsActivity.class));	
-			break;
-
-		case R.id.btnSSTouchPad:
-			startActivity(new Intent(SlideShowControllerActivity.this, TouchPadActivity.class));	
 			break;
 
 		default:

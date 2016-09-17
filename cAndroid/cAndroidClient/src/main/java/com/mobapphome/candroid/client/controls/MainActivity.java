@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		LocaleUpdater.updateLocale(this,"az");
+		//LocaleUpdater.updateLocale(this,"az");
 		setContentView(R.layout.main_activity);
 		findViewById(R.id.btnMATouchPad).setOnClickListener(this);
 		findViewById(R.id.btnMANeedForSpeed).setOnClickListener(this);

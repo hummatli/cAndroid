@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.mobapphome.mahadstest.MainActivity" >
 
+
     <item
-        android:id="@+id/action_about"
+        android:id="@+id/action_control"
         android:orderInCategory="100"
-        android:title="@string/btn_about"
-        android:icon="@drawable/ic_info_white_48dp"
+        android:title="@string/menu_control"
+        android:icon="@drawable/ic_mouse_white_48dp"
         app:showAsAction="ifRoom"/>
 
     <item

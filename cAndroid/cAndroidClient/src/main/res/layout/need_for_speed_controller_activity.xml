@@ -2,130 +2,158 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@drawable/need_for_speed">
-
-           <LinearLayout
-               android:id="@+id/linearLayout1"
-               android:layout_width="match_parent"
-               android:layout_height="40dip"
-               android:gravity="right" >
+    android:orientation="vertical">
 
-           <Button
-               android:id="@+id/btnNFSTouchPad"
-               android:layout_width="40dip"
-               android:layout_height="40dip"
-               android:background="@drawable/mouse" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
-           <Button
-               android:id="@+id/btnNFSSettings"
-               android:layout_width="40dip"
-               android:layout_height="40dip"
-               android:background="@drawable/settings"/>
+        <Button
+            android:id="@+id/btnNFSMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="-"
+            style="@style/MyNeedForSpeedButton"
+            android:textSize="80sp"
+            android:minWidth="60dp"/>
 
+        <LinearLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+
+                    <Button
+                        android:id="@+id/btnNFSStartPause"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="StartPause"
+                        style="@style/MyNeedForSpeedButton"
+                        android:drawableLeft="@drawable/ic_play_arrow_white_36dp"
+                        android:paddingLeft="0dp"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnNFSManualAoutomat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ManualAutomat"
+                    style="@style/MyNeedForSpeedButton"/>
+
+
+                <Button
+                    android:id="@+id/btnNFSDirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="R"
+                    style="@style/MyNeedForSpeedButton"
+                    android:textSize="20sp"/>
             </LinearLayout>
-
-	<LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:orientation="horizontal" >
 
-	    <Button
-	        android:id="@+id/btnNFSMinus"
-	        android:layout_width="80dip"
-	        android:layout_height="match_parent"
-	        android:text="-" />
 
-	    <RelativeLayout
-	        android:id="@+id/relativeLayout1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1" >
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
-	        <Button
-	            android:id="@+id/btnNFSForceStop"
-	            android:layout_width="220dip"
-	            android:layout_height="120dip"
-	            android:layout_alignParentBottom="true"
-	            android:layout_alignParentRight="true"
-	            android:text="@string/need_for_speed_act__btn_stop" />
-
-	        <Button
-	            android:id="@+id/btnNFSDirection"
-	            android:layout_width="100dip"
-	            android:layout_height="80dip"
-	            android:layout_alignParentRight="true"
-	            android:layout_alignParentTop="true"
-	            android:text="Direction" />
+                <TextView
+                    android:id="@+id/textViewOrX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"/>
 
-	        <Button
-	            android:id="@+id/btnNFSStartPause"
-	            android:layout_width="80dip"
-	            android:layout_height="80dip"
-	            android:layout_alignParentLeft="true"
-	            android:layout_alignParentTop="true"
-	            android:text="StartPause" />
-
-	        <Button
-	            android:id="@+id/btnNFSManualAoutomat"
-	            android:layout_width="100dip"
-	            android:layout_height="80dip"
-	            android:layout_alignParentTop="true"
-	            android:layout_toLeftOf="@+id/btnNFSDirection"
-	            android:text="ManualAutomat" />
+                <TextView
+                    android:id="@+id/textViewOrY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"/>
 
-	        <LinearLayout
-	            android:id="@+id/linearLayout2"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_alignParentLeft="true"
-	            android:layout_centerVertical="true"
-	            android:orientation="vertical" >
+                <TextView
+                    android:id="@+id/textViewOrZ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"/>
 
-	            <TextView
-	                android:id="@+id/textViewOrX"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="TextView" />
+                <TextView
+                    android:id="@+id/textViewAcX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"/>
 
-	            <TextView
-	                android:id="@+id/textViewOrY"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="TextView" />
+                <TextView
+                    android:id="@+id/textViewAcY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"/>
 
-	            <TextView
-	                android:id="@+id/textViewOrZ"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="TextView" />
+                <TextView
+                    android:id="@+id/textViewAcZ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"/>
+            </LinearLayout>
 
-	            <TextView
-	                android:id="@+id/textViewAcX"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="TextView" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
 
-	            <TextView
-	                android:id="@+id/textViewAcY"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="TextView" />
+                <Button
+                    android:id="@+id/btnNFSForceStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/need_for_speed_act__btn_stop"
+                    style="@style/MyNeedForSpeedButton"
+                    android:drawableLeft="@drawable/ic_action_brake_pedal"/>
+            </LinearLayout>
+        </LinearLayout>
 
-	            <TextView
-	                android:id="@+id/textViewAcZ"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="TextView" />
-	        </LinearLayout>
-	    </RelativeLayout>
+        <Button
+            android:id="@+id/btnNFSPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="+"
+            style="@style/MyNeedForSpeedButton"
+            android:textSize="60sp"
+            android:minWidth="60dp"/>
+    </LinearLayout>
 
-	    <Button
-	        android:id="@+id/btnNFSPlus"
-	        android:layout_width="80dip"
-	        android:layout_height="match_parent"
-	        android:text="+" />
-	</LinearLayout>
-    
 </LinearLayout>
 

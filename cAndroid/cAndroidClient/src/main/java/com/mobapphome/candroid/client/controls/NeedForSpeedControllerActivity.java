@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,12 +18,16 @@ import android.hardware.SensorManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -85,8 +91,15 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 		super.onCreate(savedInstanceState);
 	    cAndroidApplication = (CAndroidApplication) getApplicationContext();
 		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
 		setContentView(R.layout.need_for_speed_controller_activity);
 		res = getResources();
+
+		try {
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		}catch (NullPointerException npe){
+			Log.i("test", npe.getMessage());
+		}
 
 		btnMinus = (Button)findViewById(R.id.btnNFSMinus);
 		btnMinus.setOnClickListener(this);
@@ -96,9 +109,6 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 
 		btnForceStop = (Button) findViewById(R.id.btnNFSForceStop);
 		btnForceStop.setOnTouchListener(this);
-
-		findViewById(R.id.btnNFSSettings).setOnClickListener(this);
-		findViewById(R.id.btnNFSTouchPad).setOnClickListener(this);
 
 		btnDirection = (Button)findViewById(R.id.btnNFSDirection);
 		btnDirection.setOnClickListener(this);
@@ -162,6 +172,34 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 		alert.show();
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.need_for_speed, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			startActivity(new Intent(NeedForSpeedControllerActivity.this, SettingsActivity.class));
+			return true;
+		} else if (id == R.id.action_control) {
+			startActivity(new Intent(NeedForSpeedControllerActivity.this, TouchPadActivity.class));
+			return true;
+		} else if (id == android.R.id.home) {
+			onBackPressed();
+			return true;
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+
+
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btnNFSMinus:
@@ -174,14 +212,6 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 			Log.d(TAG, "This boutton dont have  onClick Listener. Plus");
 			cAndroidApplication.getClient().sendCommandKeyAsync(
 					Commands.COMMAND_TYPE_KEY_PRESSED_RELEASED, PRIMARY_CODE_SHIFT);
-			break;
-
-		case R.id.btnNFSSettings:
-			startActivity(new Intent(NeedForSpeedControllerActivity.this, SettingsActivity.class));
-			break;
-
-		case R.id.btnNFSTouchPad:
-			startActivity(new Intent(NeedForSpeedControllerActivity.this, TouchPadActivity.class));
 			break;
 
 		case R.id.btnNFSDirection:
@@ -219,11 +249,13 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 			if(started){
 				Log.d(TAG, "This boutton dont have  onClick Listener. Presses Started ");
 				btnStartPause.setText(res.getString(R.string.need_for_speed_act_btn_start));
+				btnStartPause.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_play_arrow_white_36dp, 0, 0, 0);
 				started = false;
 				setEnabledOfButtons(false);
 			}else{
 				Log.d(TAG, "This boutton dont have  onClick Listener. Prosess Stoped ");
 				btnStartPause.setText(res.getString(R.string.need_for_speed_act_btn_pause));
+				btnStartPause.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_pause_white_36dp, 0, 0, 0);
 				started = true;
 				setEnabledOfButtons(true);
 				createGoEvent();

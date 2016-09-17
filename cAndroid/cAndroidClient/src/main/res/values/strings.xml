@@ -8,6 +8,7 @@
     <string name="btn_slide_wifi">Wi-Fi-ı aktivləşdirmək</string>
     <string name="btn_settings">Sazlama</string>
     <string name="btn_about">Haqqında</string>
+    <string name="menu_control">TouchPad</string>
     <string name="btn_exit">Çıxış</string>
     
     <string name="settings_act_tv_head">Serverin addresi</string>
@@ -21,7 +22,8 @@
     <string name="settings_act_saved_normally_text">Məlumatlar saxlanıldı</string>
     <string name="settings_act_saved_not_normally_text">Məlumatların saxlanılması zaman\nsəhv baş verdi</string>
     <string name="settings_act_match_dialog_title">Diqqət!</string>
-    
+
+    <string name="need_for_speed_title">NeedForSpeedController</string>
     <string name="touchpad_act_connected_msg_text">Serverə qoşuldu</string>
     <string name="touchpad_act_connected_dont_msg_text">Serverə qoşula bilmədi</string>
     <string name="need_for_speed_act__btn_stop">Əyləc</string>
@@ -34,7 +36,7 @@
     
     <string name="slide_show_act_btn_start">Başla</string>
     <string name="slide_show_act_btn_end">Bitir</string>
-    <string name="slide_show_act_information"><![CDATA[<CENTER>Səhifələri çevirmək üçün<br> barmağınızı sağa sola sürüşdürün</CENTER>]]></string>
+    <string name="slide_show_act_information">Səhifələri çevirmək üçün barmağınızı sağa sola sürüşdürün</string>
  
     <string name="dialog_wi_fi_enabling_question">Wi-Fi şəbəkə aktiv deyil.\n Aktivləşdirilsin? </string>
     <string name="dialog_nfs_enabling_info">Need For Speed oyununu hazır vəziyyətə gətirdikdən sonra \"Başla\" 

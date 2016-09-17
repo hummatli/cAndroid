@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -52,6 +53,11 @@ public class SettingsActivity extends AppCompatActivity implements  OnClickListe
 		etSAPort = (EditText) findViewById(R.id.etSAPort);
 		etSAIP.setText(cAndroidApplication.getIP());
 		etSAPort.setText(String.valueOf(cAndroidApplication.getPort()));
+		try {
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		}catch (NullPointerException npe){
+			Log.i("test", npe.getMessage());
+		}
 	}
 
 	public void onClick(View v) {
@@ -114,5 +120,15 @@ public class SettingsActivity extends AppCompatActivity implements  OnClickListe
 	}
 
 
-
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				// app icon in action bar clicked; goto parent activity.
+				onBackPressed();
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
 }
