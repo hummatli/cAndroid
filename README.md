@@ -50,7 +50,7 @@ Tested on Windows OS.
 
 ***7)*** Open your WiFi on phone
 
-***8)*** Press `"TouchPad and KeyBoard"` button to open touchpad activity. If WiFi is closed it will ask to connect to network.
+***8)*** Press `"Touchpad and Keyboard"` button to open touchpad activity. If WiFi is closed it will ask to connect to network.
 
 ***9)*** Try swipe your finger on phone you have to see effect. Mause will move on PC
 
