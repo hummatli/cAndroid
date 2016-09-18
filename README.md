@@ -17,54 +17,16 @@ By the help of this app you can use your phone as
 <img src="https://raw.githubusercontent.com/hummatli/MAHAds/master/imgs/exit_dlg.png" width="200px"/>
 <img src="https://raw.githubusercontent.com/hummatli/MAHAds/master/imgs/programs_dlg.png" width="200px"/>
 
-#Service structure
-To provide your apps list you have to implement service provider. Structure of the service is as below. Your root folder has to contain `imgs` folder and two files `program_version.php`, `program_list.php`.
+#Application structure
 
-``` 
-root->
-    imgs			- "contains logos for your porgram on the list"
-    program_version.php 	- "show the ads service version."
-    program_list.php 		- "contains program list"
-```
- 
- `program_version.php ` service has to return json as below. 
+Application contains of two part: 
+* `Server` - Runs on PC. Accepts commands from android device
+* `Client` - Runs on Android device. Send commands to PC.
 
-```json
-	{
-	 "version":"13"
-	}
-```
-
- `program_list.php` service has to return json as below. There is two  application in this sample:
+Server suggested work on Windows, Linux, MacOS, Solaries operating systems.  
+Tested on Windows OS.
   
-```json
-	{
-	"programs":[ 
-		{
-		  "name":"Avto Nişanlar", 
-		  "desc":"Bütün yol nişanları", 
-		  "uri":"com.mobapphome.avtonishanlar",  
-		  "img":"imgs/avto_nishanlar2.png", 
-		  "release_date":"10/10/2014"
-		 },
-		 {
-		   "name":"Məzənnə", 
-		   "desc":"Valyuta çeviricisi və məzənnələr", 
-		   "uri":"com.mobapphome.currency",  
-		   "img":"imgs/mezenne2.png", 
-		   "release_date":"05/12/2014"
-		 }
-	]
-	}
-```
-#Library structure
-Library has `MAHAdsController.init()` method. It initialize modul, downloads program list from service and cashes them.
-
-Library contains from to Dialog component
-* `MAHAdsDlgExit`- This dialog calls when app quits and offers user quit or stay in app. By the way it offers random two application from your list
-* `MAHAdsDlgPrograms` - This dialog list your application from service and let you open nd install them
-  
-#Installation manual
+#How to use?
 
 <b>`1)`</b> To import library to you project add following lines to project's `build.gradle` file. The last stable version is `1.0.6`
 
@@ -155,19 +117,8 @@ Code:
 	<uses-permission android:name="android.permission.INTERNET" />
 ```
 
-#Proguard configuration
-MAHAds uses <a href="https://github.com/jhy/jsoup">Jsoup</a> lib. There for if you want to create your project with proguard you need to add following configuration to your proguard file.
-
-```gradle
-##---------------Begin: proguard configuration for Jsoup--------------------------------
--keep public class org.jsoup.** {
-public *;
-}
-##---------------End: proguard configuration for Jsoup--------------------------------
-```
-
 #End
-Thats all. If you have any probelm with setting library please let me know. Write to settarxan@gmail.com. I will help.
+Thats all. If you have any probelm with using this app please let me know. Write to settarxan@gmail.com. I will help.
 
 #Contribution
 * Fork it
@@ -176,12 +127,6 @@ Thats all. If you have any probelm with setting library please let me know. Writ
 * Push to the branch (git push origin my-new-feature)
 * Create new Pull Request
 * Star it
-
-#Contribution for localization
-We need help to add new language localization support for libarary. If you have any hope to help us we were very happy and you can check following <i><a href="https://github.com/hummatli/MAHAds/issues">GitHub Issues URL</a></i> to contribute.
-To contribute get <a href="https://github.com/hummatli/MAHAds/blob/master/MAHAds/mah-ads/src/main/res/values/strings.xml">res/values/string.xml</a> file and translate to newer language. Place it on res/values-"spacific_lang"/string.xml
-If you have any question please ask to me on <i><a href="mailto:settarxan@gmail.com">settarxan@gmail.com</a></i>
-
 
 #Developed By
 Sattar Hummatli - settarxan@gmail.com
