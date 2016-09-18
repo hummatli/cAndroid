@@ -32,15 +32,15 @@ Tested on Windows OS.
   
 #How to use?
 
-**Caution:** cAndroidServer has fully tested on Windows OS. On other OSs needs customization. All function may be will not work
+**Caution:** `cAndroidServer` has fully tested on `Windows OS`. On other OSs needs customization. All function may be will not work
 
 ***1)*** Compile and run `cAndroidServer` on your PC
 
 ***2)*** Disable your PC firewall to open way to incoming commands from Android phone
 
 ***3)*** Find your PC IP. Run on terminal  
-`ifconfig` - on Unix based systems
-`ipconfig` - on Windows
+`ifconfig` - on `Unix` based systems
+`ipconfig` - on `Windows`
 
 ***4)*** Server port set default to `6000`. If there any confilict with port change it newer one
 
@@ -50,18 +50,18 @@ Tested on Windows OS.
 
 ***7)*** Open your WiFi on phone
 
-***8)*** Press "TouchPad and KeyBoard" button to open touchpad activity. If WiFi is closed it will ask to connect to network.
+***8)*** Press `"TouchPad and KeyBoard"` button to open touchpad activity. If WiFi is closed it will ask to connect to network.
 
 ***9)*** Try swipe your finger on phone you have to see effect. Mause will move on PC
 
 ***10)*** Then you can type character by custom keyboard on phone
 
-***11)*** Try "Need for Speed" and "Slide Show controller" too. But first open that application on PC too
+***11)*** Try `"Need for Speed"` and `"Slide Show"` controller too. But first open that application on PC too
 
 ***12)*** Thats all
 
 #End
-Thats all. If you have any probelm with using this app please let me know. Write to settarxan@gmail.com. I will help.
+If you have any probelm with using this app please let me know. Write to settarxan@gmail.com. I will help.
 
 #Contribution
 * Fork it
@@ -74,6 +74,8 @@ Thats all. If you have any probelm with using this app please let me know. Write
 #Developed By
 Sattar Hummatli - settarxan@gmail.com
 
+#Developed for
+[*"Android Age"*](http://androidage.hackathonazerbaijan.org) contest
 
 #License
 Copyright 2015  - <a href="https://www.linkedin.com/in/hummatli">Sattar Hummatli</a>   
