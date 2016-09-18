@@ -159,17 +159,6 @@ public class NeedForSpeedControllerActivity extends AppCompatActivity implements
 		}else{
 			cAndroidApplication.getClient().connectWithAsyncTask();
 		}
-
-
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(getResources().getString(R.string.settings_act_match_dialog_title));
-		builder.setMessage(res.getString(R.string.dialog_nfs_enabling_info));
-		builder.setPositiveButton(res.getString(R.string.dialg_go_on), new DialogInterface.OnClickListener() {
-		           public void onClick(DialogInterface dialog, int id) {
-		           }
-		       });
-		AlertDialog alert = builder.create();
-		alert.show();
 	}
 
 	@Override

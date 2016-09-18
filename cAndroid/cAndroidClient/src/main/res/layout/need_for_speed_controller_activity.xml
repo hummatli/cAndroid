@@ -9,18 +9,18 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
-        android:paddingTop="10dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
 
         <Button
             android:id="@+id/btnNFSMinus"
+            style="@style/MyNeedForSpeedButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:minWidth="60dp"
             android:text="@string/need_for_speed_act_btn_minus"
-            style="@style/MyNeedForSpeedButton"
-            android:textSize="80sp"
-            android:minWidth="60dp"/>
+            android:textSize="80sp" />
 
         <LinearLayout
             android:id="@+id/relativeLayout1"
@@ -42,117 +42,147 @@
 
                     <Button
                         android:id="@+id/btnNFSStartPause"
+                        style="@style/MyNeedForSpeedButton"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="@string/need_for_speed_act_btn_start"
-                        style="@style/MyNeedForSpeedButton"
                         android:drawableLeft="@drawable/ic_play_arrow_white_36dp"
-                        android:paddingLeft="0dp"/>
+                        android:paddingLeft="0dp"
+                        android:text="@string/need_for_speed_act_btn_start" />
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/btnNFSManualAoutomat"
+                    style="@style/MyNeedForSpeedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="@string/need_for_speed_act_btn_manual"
-                    style="@style/MyNeedForSpeedButton"/>
+                    android:text="@string/need_for_speed_act_btn_manual" />
 
 
                 <Button
                     android:id="@+id/btnNFSDirection"
+                    style="@style/MyNeedForSpeedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/need_for_speed_act_btn_return"
-                    style="@style/MyNeedForSpeedButton"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
             </LinearLayout>
 
-
             <LinearLayout
-                android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:orientation="horizontal"
                 android:paddingTop="10dp"
-                android:paddingBottom="10dp">
+                android:paddingLeft="10dp">
 
-                <TextView
-                    android:id="@+id/textViewOrX"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"/>
+                    android:layout_height="match_parent"
+                    android:minWidth="130dp"
+                    android:gravity="top"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textViewOrY"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"/>
+                    <TextView
+                        android:id="@+id/textViewOrX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/textViewOrZ"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"/>
+                    <TextView
+                        android:id="@+id/textViewOrY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/textViewAcX"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"/>
+                    <TextView
+                        android:id="@+id/textViewOrZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/textViewAcY"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"/>
+                    <TextView
+                        android:id="@+id/textViewAcX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/textViewAcZ"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"/>
+                    <TextView
+                        android:id="@+id/textViewAcY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textViewAcZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/dialog_nfs_enabling_info"
+                        android:textColor="@color/need_for_speed_caution_text_color"
+                        android:textSize="22sp"
+                        android:paddingRight="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnNFSForceStop"
+                            style="@style/MyNeedForSpeedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_action_brake_pedal"
+                            android:text="@string/need_for_speed_act__btn_stop"
+                            android:textSize="20sp"
+                            android:paddingRight="30dp"
+                            android:paddingLeft="30dp"
+                            android:paddingTop="30dp"
+                            android:paddingBottom="30dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnNFSForceStop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/need_for_speed_act__btn_stop"
-                    style="@style/MyNeedForSpeedButton"
-                    android:drawableLeft="@drawable/ic_action_brake_pedal"/>
-            </LinearLayout>
         </LinearLayout>
 
         <Button
             android:id="@+id/btnNFSPlus"
+            style="@style/MyNeedForSpeedButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:minWidth="60dp"
             android:text="@string/need_for_speed_act_btn_plus"
-            style="@style/MyNeedForSpeedButton"
-            android:textSize="60sp"
-            android:minWidth="60dp"/>
+            android:textSize="60sp" />
     </LinearLayout>
 
 </LinearLayout>
