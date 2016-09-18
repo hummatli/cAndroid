@@ -32,7 +32,7 @@ Tested on Windows OS.
   
 #How to use?
 
-Caution: CandroidServer has fully tested on Windows OS. On other OSs needs customization. All funtion may will not work
+**Caution:** cAndroidServer has fully tested on Windows OS. On other OSs needs customization. All function may be will not work
 
 ***1)*** Compile and run `cAndroidServer` on your PC
 
@@ -56,7 +56,7 @@ Caution: CandroidServer has fully tested on Windows OS. On other OSs needs custo
 
 ***10)*** Then you can type character by custom keyboard on phone
 
-***11)*** Try "Need for Spped" and "Slide show controller" too. But first open that application on PC too
+***11)*** Try "Need for Speed" and "Slide Show controller" too. But first open that application on PC too
 
 ***12)*** Thats all
 
