@@ -28,94 +28,33 @@ Tested on Windows OS.
   
 #How to use?
 
-<b>`1)`</b> To import library to you project add following lines to project's `build.gradle` file. The last stable version is `1.0.6`
+Caution: CandroidServer has fully tested on Windows OS. On other OSs needs customization. All funtion may will not work
 
-```
-	dependencies {
-    		compile 'com.mobapphome.library:mah-ads:1.10.1'
-	}
-```
+***1)*** Compile and run `cAndroidServer` on your PC
 
-<b>`2)`</b> Call  `MAHAdsController.init()` in your project's starting point. For example: MainActivity's `onCreate()` method or in splash activity. Check url to point your services root path.
-Code: 
-```java
-	MAHAdsController.init(activity, "http://highsoft.az/mahads/");
-```
+***2)*** Disable your PC firewall to open way to incoming commands from Android phone
 
-<b>`3)`</b> Call `MAHAdsController.callExitDialog()` when your app quits. It opens `MAHAdsDlgExit` dilog. For example:
-Code:	
-```java
-	public void onBackPressed() {
-		MAHAdsController.callExitDialog(activity);
-	}
-```
-<b>Note:</b> To implement `MAHAdsDlgExit` Dialog's `onYes()`, `onNo()`, `onExitWithoutExitDlg()` your main activity has to implement `MAHAdsExitListener`. Otherwise it will through `ClassCastExeption`. `"Your activity must implement MAHAdsExitListener"` 
-```java
-	public class MainActivity extends AppCompatActivity implements MAHAdsExitListener{
-	   @Override
-    	   public void onYes() {}
+***3)*** Find your PC IP. Run on terminal  
+`ifconfig` - on Unix based systems
+`ipconfig` - on Windows
 
-    	   @Override
-           public void onNo() {}
+***4)*** Server port set default to `6000`. If there any confilict with port change it newer one
 
-           @Override
-           public void onExitWithoutExitDlg() {}
-	}
-```
+***5)*** Compile and run `cAndroidClient` on your Android device
 
-<b>`4)`</b> To open `MAHAdsDlgPrograms` call `MAHAdsController.callProgramsDialog()` In library sample it has added to menu. Check it
-Code:	
-```java
-	MAHAdsController.callExitDialog(activity);
-```
+***6)*** Press settings button on app and enter severver IP address and port number to appropriate fields
 
-<b>`5)`</b> To customize `MAHAds` dialog UI and overide colors set these values on your main projects `color.xml` file
-```xml
-    <color name="mah_ads_window_background_color">#FFFFFFFF</color>
-    <color name="mah_ads_title_bar_color">#FF3F51B5</color>
-    <color name="mah_ads_colorAccent">#FFFF4081</color>
+***7)*** Open your WiFi on phone
 
-    <color name="mah_ads_all_and_btn_text_color">#FF3F51B5</color>
-    <color name="mah_ads_question_txt_color">#FF3F51B5</color>
-    <color name="mah_ads_yes_no_txt_color">#FF3F51B5</color>
+***8)*** Press "TouchPad and KeyBoard" button to open touchpad activity. If WiFi is closed it will ask to connect to network.
 
-    <color name="mah_ads_btn_other_border_color">#FF303F9F</color>
-    <color name="mah_ads_btn_background_color_pressed">#333F51B5</color>
+***9)*** Try swipe your finger on phone you have to see effect. Mause will move on PC
 
-    <color name="mah_ads_text_view_new_background_color">#FFFF0000</color>
-    <color name="mah_ads_text_view_new_text_color">#FFFFFFFF</color>
-    <color name="mah_ads_no_img_color">#333F51B5</color>			
-```
+***10)*** Then you can type character by custom keyboard on phone
 
-<b>`7)`</b>` Localization:`  Module now supports 4 languages ` (English, Azerbaijan, Russia, Turkey)` .  To set localization to app use your own method or if it is static and don't change in program session you can just simply add 		`LocaleUpdater.updateLocale(this, "your_lang");` in the start of your app. For examlpe  `LocaleUpdater.updateLocale(this, "ru");`
+***11)*** Try "Need for Spped" and "Slide show controller" too. But first open that application on PC too
 
-<b>`8)`</b> To customize `MAHAds` UI texts and overide them add these lines to main projects `string.xml` and set them values
-
-```xml
-    <string name="mah_ads_close">Close</string>
-    <string name="mah_ads_dlg_title">Recommended applications</string>
-    <string name="mah_ads_text_google_play">Open in GooglePlay</string>
-    <string name="mah_ads_info_version">Version</string>
-    <string name="mah_ads_internet_update_error">Error, please check internet connection or link</string>
-    <string name="mah_ads_open_program">Open</string>
-    <string name="mah_ads_install_program">Install</string>
-    <string name="mah_ads_refresh_btn">Retry</string>
-    <string name="mah_ads_free_aps">Recommended applications</string>
-    <string name="mah_ads_new_text">New</string>
-
-    <string name="mah_ads_dlg_exit_question">Do you want exit?</string>
-    <string name="mah_ads_dlg_exit_positive_btn_txt">EXIT</string>
-    <string name="mah_ads_dlg_exit_negativ_btn_txt">STAY</string>
-
-    <string name="mah_ads_dlg_exit_btn_more_txt_1">Applications</string>
-    <string name="mah_ads_dlg_exit_btn_more_txt_2">Detailed</string>
-```
-<b>Note:</b> You can even customize dialogs in your application. Copy `layout/mah_ads_dialog_programs.xml`,  `layout/mah_ads_dialog_exit.xml`files and put in your layot dir and customize  them as you want. But keep view ids as they are. They will overide older ones from library. 
- 
-<b>`8)`</b> As modul takes information from web servcie you need add `INTERNET` permission to main project.
-```xml
-	<uses-permission android:name="android.permission.INTERNET" />
-```
+***12)*** Thats all
 
 #End
 Thats all. If you have any probelm with using this app please let me know. Write to settarxan@gmail.com. I will help.
