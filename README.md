@@ -14,8 +14,12 @@ By the help of this app you can use your phone as
 * Controller for "Power Point" application and other slide show apps.
 
 #Images
-<img src="https://raw.githubusercontent.com/hummatli/MAHAds/master/imgs/exit_dlg.png" width="200px"/>
-<img src="https://raw.githubusercontent.com/hummatli/MAHAds/master/imgs/programs_dlg.png" width="200px"/>
+<img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_main.png" width="150px"/>
+<img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_touchpad_keyboard.png" width="150px"/>
+<img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_settings.png" width="150px"/>
+<img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_about.png" width="150px"/>
+<img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_slide_show.png" width="150px"/>  
+<img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_need_for_speed.png" width="300px"/>
 
 #Application structure
 
