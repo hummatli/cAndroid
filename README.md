@@ -34,31 +34,31 @@ Tested on Windows OS.
 ### How to use?
 **Caution:** `cAndroidServer` has fully tested on `Windows OS`. On other OSs needs customization. All function may be will not work
 
-***1)*** Compile and run `cAndroidServer` on your PC
+**1)** Compile and run `cAndroidServer` on your PC
 
-***2)*** Disable your PC firewall to open way to incoming commands from Android phone
+**2)** Disable your PC firewall to open way to incoming commands from Android phone
 
-***3)*** Find your PC IP. Run on terminal  
+**3)** Find your PC IP. Run on terminal  
 `ifconfig` - on `Unix` based systems
 `ipconfig` - on `Windows`
 
-***4)*** Server port set default to `6000`. If there any confilict with port change it newer one
+**4)** Server port set default to `6000`. If there any confilict with port change it newer one
 
-***5)*** Compile and run `cAndroidClient` on your Android device
+**5)** Compile and run `cAndroidClient` on your Android device
 
-***6)*** Press settings button on app and enter severver IP address and port number to appropriate fields
+**6)** Press settings button on app and enter severver IP address and port number to appropriate fields
 
-***7)*** Open your WiFi on phone
+**7)** Open your WiFi on phone
 
-***8)*** Press `"Touchpad and Keyboard"` button to open touchpad activity. If WiFi is closed it will ask to connect to network.
+**8)** Press `"Touchpad and Keyboard"` button to open touchpad activity. If WiFi is closed it will ask to connect to network.
 
-***9)*** Try swipe your finger on phone you have to see effect. Mause will move on PC
+**9)** Try swipe your finger on phone you have to see effect. Mause will move on PC
 
-***10)*** Then you can type character by custom keyboard on phone
+**10)** Then you can type character by custom keyboard on phone
 
-***11)*** Try `"Need for Speed"` and `"Slide Show"` controller too. But first open that application on PC too
+**11)** Try `"Need for Speed"` and `"Slide Show"` controller too. But first open that application on PC too
 
-***12)*** Thats all
+**12)** Thats all
 
 ### End
 If you have any probelm with using this app please let me know. Write to settarxan@gmail.com. I will help.
