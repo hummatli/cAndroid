@@ -13,7 +13,7 @@ By the help of this app you can use your phone as
 * Controller for "Need for Speed" game and others  
 * Controller for "Power Point" application and other slide show apps.
 
-#Images
+### Images
 <img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_main.png" width="150px"/>
 <img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_touchpad_keyboard.png" width="150px"/>
 <img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_settings.png" width="150px"/>
@@ -21,8 +21,7 @@ By the help of this app you can use your phone as
 <img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_slide_show.png" width="150px"/>  
 <img src="https://raw.githubusercontent.com/hummatli/cAndroid/master/imgs/screenshots/act_need_for_speed.png" width="300px"/>
 
-#Application structure
-
+### Application structure
 Application contains of two part: 
 * `Server` - Runs on PC. Accepts commands from android device
 * `Client` - Runs on Android device. Send commands to PC.
@@ -30,8 +29,7 @@ Application contains of two part:
 Server suggested work on Windows, Linux, MacOS, Solaries operating systems.  
 Tested on Windows OS.
   
-#How to use?
-
+### How to use?
 **Caution:** `cAndroidServer` has fully tested on `Windows OS`. On other OSs needs customization. All function may be will not work
 
 ***1)*** Compile and run `cAndroidServer` on your PC
@@ -60,10 +58,10 @@ Tested on Windows OS.
 
 ***12)*** Thats all
 
-#End
+### End
 If you have any probelm with using this app please let me know. Write to settarxan@gmail.com. I will help.
 
-#Contribution
+### Contribution
 * Fork it
 * Create your feature branch (git checkout -b my-new-feature)
 * Commit your changes (git commit -am 'Added some feature')
@@ -71,13 +69,13 @@ If you have any probelm with using this app please let me know. Write to settarx
 * Create new Pull Request
 * Star it
 
-#Developed By
+### Developed By
 Sattar Hummatli - settarxan@gmail.com
 
-#Developed for
+### Developed for
 [*"Android Age"*](http://androidage.hackathonazerbaijan.org) contest
 
-#License
+### License
 Copyright 2015  - <a href="https://www.linkedin.com/in/hummatli">Sattar Hummatli</a>   
 
 Licensed under the Apache License, Version 2.0 (the "License");
