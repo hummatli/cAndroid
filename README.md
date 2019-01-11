@@ -1,7 +1,7 @@
 # cAndroid - Control via Android
 
 [*"cAndroid" - Control via Android*](https://github.com/hummatli/cAndroid) is tool for controlling PC with android device.
-This application has created by [*Sattar Hummatli*](https://www.linkedin.com/in/hummatli) to provide to the contest [*"Android Age"*](http://androidage.hackathonazerbaijan.org) which hold by [*"Hackathon Azerbaijan"*](http://hackathonazerbaijan.org).  
+This application has created by [*Sattar Hummatli*](https://www.linkedin.com/in/hummatli) to provide to the contest [*"Android Age"*](http://androidage.hackathonazerbaijan.org) which hold by [*"Hackathon Azerbaijan"*](http://hackathonazerbaijan.org). To support, <a href="https://www.buymeacoffee.com/hummatli" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 Application took third place on competition.
 
